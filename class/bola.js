@@ -9,7 +9,7 @@ class Bola {
     this.ctx = ctx;
     this.movendo = false;
     this.pad = pad;
-    this.vel = 6;
+    this.vel = 20;
     this.largura = 20;
     this.dirX = 0;
     this.dirY = 0;
@@ -52,7 +52,7 @@ class Bola {
         this.dirY = 1;
       }
 
-      //colisão com jogador
+      // colisão com jogador
       if (
         this.x <= this.pad.x + this.pad.largura &&
         this.x + this.largura >= this.pad.x &&
