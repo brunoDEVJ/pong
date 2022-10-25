@@ -3,11 +3,13 @@ class Pad {
     {
         this.ctx=ctx;
         this.teclado=teclado;
-        this.vel=5;
+        this.vel=4;
         this.largura= 20;
         this.altura=100;
         this.x=0;
         this.y=(this.ctx.canvas.height/2) -  (this.altura/2);
+        this.inicioX = this.x;
+        this.inicioY = this.y;
     }
 
     gerenciar()
@@ -45,7 +47,7 @@ class Pad {
     desenhar()
     {
         this.gerenciar()
-        this.ctx.fillStyle = 'red'
+        this.ctx.fillStyle = 'blue'
         this.ctx.fillRect(this.x, this.y, this.largura, this.altura)
     }
 }

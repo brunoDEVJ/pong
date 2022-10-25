@@ -2,7 +2,7 @@ class Cpu {
   constructor(ctx, bola) {
     this.ctx = ctx;
     this.bola = bola;
-    this.vel = 5;
+    this.vel = 4;
     this.largura = 20;
     this.altura = 100;
     this.x = this.ctx.canvas.width - this.largura;
@@ -36,11 +36,26 @@ class Cpu {
         this.x += this.vel;
       }
     }
+
+    if (
+      this.bola.x + this.bola.largura >= this.x &&
+      this.bola.x <= this.x + this.largura &&
+      this.bola.y + this.bola.altura >= this.y &&
+      this.bola.y <= this.y + this.altura
+    ) {
+      this.bola.dirX *= -1;
+    }
+
+    if(!this.bola.movendo)
+    {
+      this.x = this.inicioX;
+      this.y = this.inicioY;
+    }
   }
 
   desenhar() {
     this.gerenciar();
-    this.ctx.fillStyle = "yellow";
+    this.ctx.fillStyle = "red";
     this.ctx.fillRect(this.x, this.y, this.largura, this.altura);
   }
 }
